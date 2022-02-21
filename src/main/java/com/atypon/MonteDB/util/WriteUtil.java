@@ -33,8 +33,9 @@ public class WriteUtil<T> {
 
 
     private Map<String,T> getData(String path) throws IOException {
-        if(new File(path).exists()){
-        return ReadUtil.readFile(path);
+        File file =new File(path);
+        if(file.exists()){
+        return ReadUtil.readFile(file);
         }else{
          return new HashMap<String,T>();
         }
